@@ -15,9 +15,9 @@ from torch.utils.tensorboard import SummaryWriter
 from torch.cuda.amp import GradScaler
 
 from clip.clip import _transform, load
-from clip.model import convert_weights, CLIP
+from clip.model import convert_weights, CLIP, VisionTowerCLIP
 from training.train import train, evaluate
-from training.data import get_data
+from training.data import get_data, build_simclr_transform
 from training.params import parse_args
 from training.logger import setup_primary_logging, setup_worker_logging
 from training.scheduler import cosine_lr
@@ -47,7 +47,7 @@ def main_worker(gpu, ngpus_per_node, log_queue, args):
                 val = getattr(args, name)
                 logging.info(f"  {name}: {val}")
                 f.write(f"{name}: {val}\n")
-            
+
     if args.distributed:
         dist.init_process_group(
             backend=args.dist_backend,
@@ -55,7 +55,7 @@ def main_worker(gpu, ngpus_per_node, log_queue, args):
             world_size=args.world_size,
             rank=args.rank,
         )
-    
+
     if args.dp:
         args.batch_size *= args.world_size
 
@@ -75,8 +75,15 @@ def main_worker(gpu, ngpus_per_node, log_queue, args):
         assert os.path.exists(model_config_file)
         with open(model_config_file, 'r') as f:
             model_info = json.load(f)
-        model = CLIP(**model_info)
+        if args.vision_tower_only:
+            model = VisionTowerCLIP(**model_info)
+        else:
+            model = CLIP(**model_info)
         convert_weights(model)
+        if args.loss_type == "simclr":
+            preprocess_train = build_simclr_transform()
+            preprocess_val = build_simclr_transform()
+
         preprocess_train = _transform(model.visual.input_resolution, is_train=True)
         preprocess_val = _transform(model.visual.input_resolution, is_train=False)
 
@@ -99,7 +106,7 @@ def main_worker(gpu, ngpus_per_node, log_queue, args):
         if args.distributed and args.use_bn_sync:
             model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
         if args.distributed:
-            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu],find_unused_parameters=True )
         if args.dp:
             model = torch.nn.DataParallel(model, device_ids=args.multigpu)
 
@@ -277,7 +284,7 @@ def main():
     for dirname in [args.tensorboard_path, args.checkpoint_path]:
         if dirname:
             os.makedirs(dirname, exist_ok=True)
-    
+
 
     # Set multiprocessing type to spawn.
     # This is important for logging to work with multiprocessing.

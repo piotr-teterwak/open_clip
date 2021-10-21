@@ -27,14 +27,104 @@ import webdataset as wds
 from clip.clip import tokenize
 
 
+class TwoCropTransform:
+    """Create two crops of the same image"""
+    def __init__(self, transform):
+        self.transform = transform
+
+    def __call__(self, x):
+        return [self.transform(x), self.transform(x)]
+
+def build_simclr_transform()
+    augmentation = [
+	transforms.RandomResizedCrop(224, scale=(0.2, 1.)),
+	transforms.RandomApply([
+	    transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)  # not strengthened
+	], p=0.8),
+	transforms.RandomGrayscale(p=0.2),
+	transforms.RandomApply([moco.loader.GaussianBlur([.1, 2.])], p=0.5),
+	transforms.RandomHorizontalFlip(),
+	transforms.ToTensor(),
+	normalize
+    ]
+    return TwoCropTransform(augmentation)
+
+
+# From https://github.com/Stomper10/CheXpert/blob/62cf19ba92dc316f3f46327be6fc763aa5ae185f/materials.py#L37
+class CheXpertDataSet(Dataset):
+    def __init__(self, label_path, args,transform_train, mode='train'):
+        self._label_header = None
+        self._image_paths = []
+        self._labels = []
+        self._mode = mode
+        self.dict = [{'1.0': '1', '': '0', '0.0': '0', '-1.0': '0'},
+                     {'1.0': '1', '': '0', '0.0': '0', '-1.0': '1'}, ]
+        with open(label_path) as f:
+            header = f.readline().strip('\n').split(',')
+            self._label_header = [
+                header[7],
+                header[10],
+                header[11],
+                header[13],
+                header[15]]
+            for line in f:
+                labels = []
+                fields = line.strip('\n').split(',')
+                image_path = fields[0]
+                flg_enhance = False
+                for index, value in enumerate(fields[5:]):
+                    if index == 5 or index == 8:
+                        labels.append(self.dict[1].get(value))
+                        if self.dict[1].get(
+                                value) == '1' and \
+                                args.enchance_index_list.count(index) > 0:
+                            flg_enhance = True
+                    elif index == 2 or index == 6 or index == 10:
+                        labels.append(self.dict[0].get(value))
+                        if self.dict[0].get(
+                                value) == '1' and \
+                                args.enchance_index_list.count(index) > 0:
+                            flg_enhance = True
+                # labels = ([self.dict.get(n, n) for n in fields[5:]])
+                labels = list(map(int, labels))
+                image_path = image_path.replace('/nas/public/CheXpert/CheXpert-v1.0','CheXpert-v1.0-small/')
+                self._image_paths.append(image_path)
+                assert os.path.exists(image_path), image_path
+                self._labels.append(labels)
+                if flg_enhance and self._mode == 'train':
+                    for i in range(self.args.enhance_times):
+                        self._image_paths.append(image_path)
+                        self._labels.append(labels)
+        self._num_image = len(self._image_paths)
+        print(self._num_image)
+        self.transform_train = transform_train
+
+    def __len__(self):
+        return self._num_image
+
+    def __getitem__(self, idx):
+        image = cv2.imread(self._image_paths[idx], 0)
+        image_orig = Image.fromarray(image)
+        image = self.transform_train(image_orig)
+        labels = np.array(self._labels[idx]).astype(np.float32)
+
+        path = self._image_paths[idx]
+
+        return image,labels
+
+
+
 class CsvDataset(Dataset):
-    def __init__(self, input_filename, transforms, img_key, caption_key, sep="\t"):
+    def __init__(self, input_filename, transforms, img_key, caption_key, sep="\t",data_prefix=None):
         logging.debug(f'Loading csv data from {input_filename}.')
         df = pd.read_csv(input_filename, sep=sep)
 
         self.images = df[img_key].tolist()
+        if data_prefix is not None:
+            self.images = [os.path.join(data_prefix,img_path) for img_path in self.images]
         self.captions = df[caption_key].tolist()
         self.transforms = transforms
+        self.data_prefix = data_prefix
         logging.debug('Done loading data.')
 
     def __len__(self):
@@ -81,29 +171,55 @@ def get_imagenet(args, preprocess_fns, split):
 
         dataset = datasets.ImageFolder(data_path, transform=preprocess_fn)
 
-    if is_train:
-        idxs = np.zeros(len(dataset.targets))
-        target_array = np.array(dataset.targets)
-        k = 50
-        for c in range(1000):
-            m = target_array == c
-            n = len(idxs[m])
-            arr = np.zeros(n)
-            arr[:k] = 1
-            np.random.shuffle(arr)
-            idxs[m] = arr
 
-        idxs = idxs.astype('int')
-        sampler = SubsetRandomSampler(np.where(idxs)[0])
-    else:
-        sampler = None
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
 
     dataloader = torch.utils.data.DataLoader(
         dataset,
         batch_size=args.batch_size,
         num_workers=args.workers,
         sampler=sampler,
+        pin_memory=True,
+        drop_last=is_train,
+        shuffle=shuffle
     )
+    dataloader.num_samples = len(dataset)
+    dataloader.num_batches = len(dataloader)
+
+    return DataInfo(dataloader, sampler)
+
+def get_chexpert(args, preprocess_fns, split):
+    assert split in ["train", "val"]
+    is_train = split == "train"
+    preprocess_train, preprocess_val = preprocess_fns
+
+
+    if is_train:
+        data_path  = args.train_data
+        preprocess_fn = preprocess_train
+    else:
+        data_path = args.val_data
+        preprocess_fn = preprocess_val
+    assert data_path
+
+    dataset = datasets.CheXpertDataSet(data_path,args, transform_train=preprocess_fn)
+
+
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
+
+    dataloader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=args.batch_size,
+        num_workers=args.workers,
+        sampler=sampler,
+        pin_memory=True,
+        drop_last=is_train,
+        shuffle=shuffle
+    )
+    dataloader.num_samples = len(dataset)
+    dataloader.num_batches = len(dataloader)
 
     return DataInfo(dataloader, sampler)
 
@@ -162,7 +278,9 @@ def get_csv_dataset(args, preprocess_fn, is_train):
         preprocess_fn,
         img_key=args.csv_img_key,
         caption_key=args.csv_caption_key,
-        sep=args.csv_separator)
+        sep=args.csv_separator,
+        data_prefix=args.data_prefix
+        )
     num_samples = len(dataset)
     sampler = DistributedSampler(dataset) if args.distributed and is_train else None
     shuffle = is_train and sampler is None
@@ -197,22 +315,30 @@ def get_dataset_fn(data_path, dataset_type):
                 f"Tried to figure out dataset type, but failed for extention {ext}.")
     else:
         raise ValueError(f"Unsupported dataset type: {dataset_type}")
-    
+
 
 def get_data(args, preprocess_fns):
     preprocess_train, preprocess_val = preprocess_fns
     data = {}
 
-    if args.train_data:
-        data["train"] = get_dataset_fn(args.train_data, args.dataset_type)(
-            args, preprocess_train, is_train=True)
-    if args.val_data:
-        data["val"] = get_dataset_fn(args.val_data, args.dataset_type)(
-            args, preprocess_val, is_train=False)
+    if args.dataset_type == "chexpert":
+        data["train"] = get_chexpert(args, preprocess_fns, "train")
+        data["val"] = get_chexpert(args, preprocess_fns, "val")
+    elif args.dataset_type == "imagenet":
+        data["train"] = get_imagenet(args, preprocess_fns, "train")
+        data["val"] = get_imagenet(args, preprocess_fns, "val")
+    else:
+      if args.train_data:
+          data["train"] = get_dataset_fn(args.train_data, args.dataset_type)(
+              args, preprocess_train, is_train=True)
+      if args.val_data:
+          data["val"] = get_dataset_fn(args.val_data, args.dataset_type)(
+              args, preprocess_val, is_train=False)
 
-    if args.imagenet_val is not None:
-        data["imagenet-val"] = get_imagenet(args, preprocess_fns, "val")
-    if args.imagenet_v2 is not None:
-        data["imagenet-v2"] = get_imagenet(args, preprocess_fns, "v2")
+    if args.imagenet_zeroshot:
+        if args.imagenet_val is not None:
+            data["imagenet-val"] = get_imagenet(args, preprocess_fns, "val")
+        if args.imagenet_v2 is not None:
+            data["imagenet-v2"] = get_imagenet(args, preprocess_fns, "v2")
 
     return data

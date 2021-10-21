@@ -14,6 +14,29 @@ def get_default_params(model_name):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--vision-tower-only",
+        default=False,
+        action='store_true',
+        help="Whether to only build the vision tower."
+    )
+    parser.add_argument(
+        "--loss-type",
+        choices=["clip","xent","simclr"],
+        default="clip",
+        help="Which loss to use"
+    )
+    parser.add_argument(
+        "--enchance_index",
+        type=str,
+        default='2,6',
+        help="chexpert thing i dont understand",
+    )
+    parser.add_argument(
+        "--enchance_times",
+        type=int,
+        default=1,
+        help="chexpert thing i dont understand",
+    )    parser.add_argument(
         "--train-data",
         type=str,
         default=None,
@@ -26,8 +49,14 @@ def parse_args():
         help="Path to csv file with validation data",
     )
     parser.add_argument(
+        "--data-prefix",
+        type=str,
+        default=None,
+        help="Data prefix",
+    )
+    parser.add_argument(
         "--dataset-type",
-        choices=["webdataset", "csv", "auto"],
+        choices=["webdataset", "csv", "auto","imagenet","chexpert"],
         default="auto",
         help="Which type of dataset to process."
     )
@@ -53,7 +82,19 @@ def parse_args():
         "--imagenet-val",
         type=str,
         default=None,
-        help="Path to imagenet val set for conducting zero shot evaluation.",
+        help="Path to imagenet val set.",
+    )
+    parser.add_argument(
+        "--imagenet-train",
+        type=str,
+        default=None,
+        help="Path to imagenet train set.",
+    )
+    parser.add_argument(
+        "--imagenet-zeroshot",
+        action='store_true',
+        default=False,
+        help="Whether to do zeroshot eval.",
     )
     parser.add_argument(
         "--imagenet-v2",
@@ -204,4 +245,11 @@ def parse_args():
         if getattr(args, name) is None:
             setattr(args, name, val)
 
+    args.enchance_index_list = [int(i) for i in args.enchance_index.split(",")]
+
+   if (args.loss_type == "xent") !=  args.vision_tower_only:
+        raise RuntimeError("Cross entropy loss is only compatible with vision tower only, and vice-versa")
+
+   if (args.loss_type == "simclr") !=  args.vision_tower_only:
+        raise RuntimeError("simclr loss is only compatible with vision tower only, and vice-versa")
     return args

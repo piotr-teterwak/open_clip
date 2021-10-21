@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 
 from torch.cuda.amp import autocast
+from losses import SupConLoss
 import torch.distributed as dist
 
 from .zero_shot import zero_shot_eval
@@ -20,7 +21,7 @@ import logging
 def is_master(args):
     return (not args.distributed) or args.gpu == 0
 
-def get_loss(model, images, texts, loss_img, loss_txt, args):
+def get_clip_loss(model, images, texts, loss_img, loss_txt, args):
     image_features, text_features, logit_scale = model(images, texts)
     logit_scale = logit_scale.mean()
     if args.distributed and args.aggregate:
@@ -66,10 +67,31 @@ def get_loss(model, images, texts, loss_img, loss_txt, args):
     ) / 2
     return total_loss
 
+def get_xent_loss(model, images, labels, loss_img, args):
+
+    image_features = model(images, normalize_features=False)
+    return loss_img(image_features, labels)
+
+def get_simclr_loss():
+    image_features = model(images, normalize_features=True)
+    loss_img = SupConLoss()
+    return loss_img(image_features)
+
+
+
+
+def get_loss(model, images, texts, loss_img, loss_txt, args):
+    if args.loss_type == "clip":
+        return get_clip_loss(model, images, texts, loss_img, loss_txt, args)
+    elif args.loss_type == "xent":
+        labels = texts
+        return get_xent_loss(model, images, labels, loss_img, args)
+    elif args.loss_type == "simclr":
+        return get_simclr_loss(model, images, args)
 
 def train(model, data, epoch, optimizer, scaler, scheduler, args, tb_writer=None):
     os.environ["WDS_EPOCH"] = str(epoch)
-    
+
     model.train()
 
     dataloader, sampler = data['train'].dataloader,  data['train'].sampler
@@ -147,12 +169,70 @@ def train(model, data, epoch, optimizer, scaler, scheduler, args, tb_writer=None
                 if args.wandb:
                     wandb.log({name: val, 'step': timestep})
 
+def vision_tower_eval(model, data, epoch, args, tb_writer=None, steps=None):
+    if not is_master(args):
+        return
+
+    model.eval()
+
+
+    dataloader = data['val'].dataloader
+
+    loss_img = nn.CrossEntropyLoss()
+    if args.gpu is not None:
+        loss_img = loss_img.cuda(args.gpu)
+
+    cumulative_loss = 0.0
+    num_elements = 0.0
+    all_image_features, all_text_features = [], []
+    with torch.no_grad():
+        for batch in dataloader:
+            images, texts = batch
+            if args.gpu is not None:
+                images = images.cuda(args.gpu, non_blocking=True)
+                texts = texts.cuda(args.gpu, non_blocking=True)
+
+            total_loss = get_loss(model, images, texts, loss_img, None, args)
+            batch_size = len(images)
+            cumulative_loss += total_loss * batch_size
+            num_elements += batch_size
+
+        # Update to add accuracy
+        metrics = {}
+        loss = cumulative_loss / num_elements
+        metrics.update(
+            **{"val_loss": loss.item(), "epoch": epoch, "num_elements": num_elements}
+        )
+        metrics.update(zero_shot_metrics)
+
+        logging.info(
+            f"Eval Epoch: {epoch} "
+            + "\t".join([f"{k}: {v:.4f}" for k, v in metrics.items()])
+        )
+
+        if args.save_logs:
+            for name, val in metrics.items():
+                if tb_writer is not None:
+                    tb_writer.add_scalar(f"val/{name}", val, epoch)
+        if args.wandb:
+            for name, val in metrics.items():
+                wandb.log({f"val/{name}": val, 'epoch': epoch})
+
+    if args.save_logs:
+        with open(os.path.join(args.checkpoint_path, "results.jsonl"), "a+") as f:
+            f.write(json.dumps(metrics))
+            f.write("\n")
+
+    return metrics
 
 def evaluate(model, data, epoch, args, tb_writer=None, steps=None):
     if not is_master(args):
         return
-    
+
     model.eval()
+
+    if args.vision_tower_only:
+        return vision_tower_eval(model, data, epoch, args, tb_writer=tb_writer, steps=steps)
 
     zero_shot_metrics = zero_shot_eval(model, data, epoch, args)
 
