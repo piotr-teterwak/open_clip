@@ -83,9 +83,9 @@ def main_worker(gpu, ngpus_per_node, log_queue, args):
         if args.loss_type == "simclr":
             preprocess_train = build_simclr_transform()
             preprocess_val = build_simclr_transform()
-
-        preprocess_train = _transform(model.visual.input_resolution, is_train=True)
-        preprocess_val = _transform(model.visual.input_resolution, is_train=False)
+        else:
+            preprocess_train = _transform(model.visual.input_resolution, is_train=True)
+            preprocess_val = _transform(model.visual.input_resolution, is_train=False)
 
 
     # See https://discuss.pytorch.org/t/valueerror-attemting-to-unscale-fp16-gradients/81372

@@ -72,9 +72,13 @@ def get_xent_loss(model, images, labels, loss_img, args):
     image_features = model(images, normalize_features=False)
     return loss_img(image_features, labels)
 
-def get_simclr_loss():
-    image_features = model(images, normalize_features=True)
+def get_simclr_loss(model, images, args):
+    batch_size = images[0].shape[0]
+    images_stacked = torch.cat(images)
+    image_features = model(images_stacked, normalize_features=True)
     loss_img = SupConLoss()
+    image_features = torch.split(image_features,batch_size)
+    image_features = torch.stack(image_features, dim=1)
     return loss_img(image_features)
 
 
@@ -116,7 +120,11 @@ def train(model, data, epoch, optimizer, scaler, scheduler, args, tb_writer=None
 
         images, texts = batch
         if args.gpu is not None:
-            images = images.cuda(args.gpu, non_blocking=True)
+            if args.loss_type == "simclr":
+                images[0] = images[0].cuda(args.gpu, non_blocking=True)
+                images[1] = images[1].cuda(args.gpu, non_blocking=True)
+            else:
+                images = images.cuda(args.gpu, non_blocking=True)
             texts = texts.cuda(args.gpu, non_blocking=True)
 
         data_time = time.time() - end
@@ -189,7 +197,11 @@ def vision_tower_eval(model, data, epoch, args, tb_writer=None, steps=None):
         for batch in dataloader:
             images, texts = batch
             if args.gpu is not None:
-                images = images.cuda(args.gpu, non_blocking=True)
+                if args.loss_type == "simclr":
+                    images[0] = images[0].cuda(args.gpu, non_blocking=True)
+                    images[1] = images[1].cuda(args.gpu, non_blocking=True)
+                else:
+                    images = images.cuda(args.gpu, non_blocking=True)
                 texts = texts.cuda(args.gpu, non_blocking=True)
 
             total_loss = get_loss(model, images, texts, loss_img, None, args)
@@ -203,7 +215,6 @@ def vision_tower_eval(model, data, epoch, args, tb_writer=None, steps=None):
         metrics.update(
             **{"val_loss": loss.item(), "epoch": epoch, "num_elements": num_elements}
         )
-        metrics.update(zero_shot_metrics)
 
         logging.info(
             f"Eval Epoch: {epoch} "

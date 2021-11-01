@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import pyarrow as pa
 from PIL import Image
+from PIL import ImageFilter
 
 from typing import Union
 from dataclasses import dataclass
@@ -19,13 +20,31 @@ import torch
 from torch.utils.data import Dataset, DataLoader, SubsetRandomSampler
 from torch.utils.data.distributed import DistributedSampler
 import torchvision.datasets as datasets
+import torchvision.transforms as transforms
 from webdataset.utils import identity
 import webdataset as wds
+
+import cv2
 
 
 
 from clip.clip import tokenize
 
+
+normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                 std=[0.229, 0.224, 0.225])
+
+"""https://github.com/facebookresearch/moco/blob/main/moco/loader.py"""
+class GaussianBlur(object):
+    """Gaussian blur augmentation in SimCLR https://arxiv.org/abs/2002.05709"""
+
+    def __init__(self, sigma=[.1, 2.]):
+        self.sigma = sigma
+
+    def __call__(self, x):
+        sigma = random.uniform(self.sigma[0], self.sigma[1])
+        x = x.filter(ImageFilter.GaussianBlur(radius=sigma))
+        return x
 
 class TwoCropTransform:
     """Create two crops of the same image"""
@@ -35,19 +54,19 @@ class TwoCropTransform:
     def __call__(self, x):
         return [self.transform(x), self.transform(x)]
 
-def build_simclr_transform()
+def build_simclr_transform():
     augmentation = [
 	transforms.RandomResizedCrop(224, scale=(0.2, 1.)),
 	transforms.RandomApply([
 	    transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)  # not strengthened
 	], p=0.8),
 	transforms.RandomGrayscale(p=0.2),
-	transforms.RandomApply([moco.loader.GaussianBlur([.1, 2.])], p=0.5),
+	transforms.RandomApply([GaussianBlur([.1, 2.])], p=0.5),
 	transforms.RandomHorizontalFlip(),
 	transforms.ToTensor(),
 	normalize
     ]
-    return TwoCropTransform(augmentation)
+    return TwoCropTransform(transforms.Compose(augmentation))
 
 
 # From https://github.com/Stomper10/CheXpert/blob/62cf19ba92dc316f3f46327be6fc763aa5ae185f/materials.py#L37
@@ -87,12 +106,13 @@ class CheXpertDataSet(Dataset):
                             flg_enhance = True
                 # labels = ([self.dict.get(n, n) for n in fields[5:]])
                 labels = list(map(int, labels))
-                image_path = image_path.replace('/nas/public/CheXpert/CheXpert-v1.0','CheXpert-v1.0-small/')
+                #image_path = image_path.replace('/nas/public/CheXpert/CheXpert-v1.0','/research/piotrt/data/chexpert/CheXpert-v1.0-small/')
+                image_path = os.path.join('/research/piotrt/data/chexpert',image_path)
                 self._image_paths.append(image_path)
                 assert os.path.exists(image_path), image_path
                 self._labels.append(labels)
                 if flg_enhance and self._mode == 'train':
-                    for i in range(self.args.enhance_times):
+                    for i in range(args.enchance_times):
                         self._image_paths.append(image_path)
                         self._labels.append(labels)
         self._num_image = len(self._image_paths)
@@ -104,7 +124,7 @@ class CheXpertDataSet(Dataset):
 
     def __getitem__(self, idx):
         image = cv2.imread(self._image_paths[idx], 0)
-        image_orig = Image.fromarray(image)
+        image_orig = Image.fromarray(image).convert('RGB')
         image = self.transform_train(image_orig)
         labels = np.array(self._labels[idx]).astype(np.float32)
 
@@ -203,7 +223,7 @@ def get_chexpert(args, preprocess_fns, split):
         preprocess_fn = preprocess_val
     assert data_path
 
-    dataset = datasets.CheXpertDataSet(data_path,args, transform_train=preprocess_fn)
+    dataset = CheXpertDataSet(data_path,args, transform_train=preprocess_fn)
 
 
     sampler = DistributedSampler(dataset) if args.distributed and is_train else None

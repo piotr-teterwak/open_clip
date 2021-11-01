@@ -36,7 +36,8 @@ def parse_args():
         type=int,
         default=1,
         help="chexpert thing i dont understand",
-    )    parser.add_argument(
+    )
+    parser.add_argument(
         "--train-data",
         type=str,
         default=None,
@@ -247,9 +248,9 @@ def parse_args():
 
     args.enchance_index_list = [int(i) for i in args.enchance_index.split(",")]
 
-   if (args.loss_type == "xent") !=  args.vision_tower_only:
+    if (args.loss_type == "xent" or args.loss_type == "simclr") !=  args.vision_tower_only:
         raise RuntimeError("Cross entropy loss is only compatible with vision tower only, and vice-versa")
 
-   if (args.loss_type == "simclr") !=  args.vision_tower_only:
-        raise RuntimeError("simclr loss is only compatible with vision tower only, and vice-versa")
+    #if (args.loss_type == "simclr") !=  args.vision_tower_only:
+    #    raise RuntimeError("simclr loss is only compatible with vision tower only, and vice-versa")
     return args
