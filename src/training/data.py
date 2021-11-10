@@ -6,6 +6,7 @@ import functools
 import braceexpand
 import random
 import pdb
+import glob
 
 import pandas as pd
 import numpy as np
@@ -69,6 +70,56 @@ def build_simclr_transform():
     return TwoCropTransform(transforms.Compose(augmentation))
 
 
+class CustomConcatDataset(torch.utils.data.Dataset):
+    def __init__(self, *datasets):
+        self.datasets = datasets
+
+    def __getitem__(self, i):
+        images = []
+        labels = []
+        for d in self.datasets:
+            if len(d) < self.__len__():
+                idx =  int((i*(len(d)-1))/self.__len__())
+            else:
+                idx = i
+            image, label = d[i]
+            images.append(image)
+            labels.append(label)
+        return torch.stack(images), tuple(labels)
+
+    def __len__(self):
+        return max(len(d) for d in self.datasets)
+
+class NIHDataSet(Dataset):
+    def __init__(self, data_path, transform = None, train=True):
+        if train:
+            csv_path = os.path.join(data_path,'train.csv')
+        else:
+            csv_path = os.path.join(data_path,'test.csv')
+        self.df = pd.read_csv(csv_path)
+        self.image_files = os.path.join(data_path,'**','**')
+        self._num_images = len(self.df)
+        self.transform = transform
+        self.classes =  ['Nodule', 'No Finding', 'Pneumonia', 'Hernia', 'Atelectasis',
+ 		'Effusion', 'Edema', 'Pleural_Thickening', 'Consolidation',
+ 		'Infiltration', 'Emphysema', 'Fibrosis', 'Mass', 'Cardiomegaly', 'Pneumothorax']
+        self.class_map = {v:i for i,v in enumerate(self.classes)}
+
+    def __len__(self):
+        return self._num_images
+
+    def __getitem__(self, idx):
+        img_file = self.df['Image Index'][idx]
+        image_path = glob.glob(os.path.join(self.image_files,img_file))[0]
+        image = cv2.imread(image_path, 0)
+        image = Image.fromarray(image).convert('RGB')
+        if self.transform is not None:
+            image = self.transform(image)
+        #Figure out multilabel!!!!!!!!
+        label = self.class_map[self.df['Finding Labels'][idx].split('|')[0]]
+
+        return image, label
+
 # From https://github.com/Stomper10/CheXpert/blob/62cf19ba92dc316f3f46327be6fc763aa5ae185f/materials.py#L37
 class CheXpertDataSet(Dataset):
     def __init__(self, label_path, args,transform_train, mode='train'):
@@ -128,7 +179,6 @@ class CheXpertDataSet(Dataset):
         image = self.transform_train(image_orig)
         labels = np.array(self._labels[idx]).astype(np.float32)
 
-        path = self._image_paths[idx]
 
         return image,labels
 
@@ -243,6 +293,110 @@ def get_chexpert(args, preprocess_fns, split):
 
     return DataInfo(dataloader, sampler)
 
+def get_nih(args, preprocess_fns, split):
+    assert split in ["train", "val"]
+    is_train = split == "train"
+    preprocess_train, preprocess_val = preprocess_fns
+
+
+    if is_train:
+        data_path  = args.train_data
+        preprocess_fn = preprocess_train
+    else:
+        data_path = args.val_data
+        preprocess_fn = preprocess_val
+    assert data_path
+
+    dataset = NIHDataSet(data_path, transform = preprocess_fn, train=is_train)
+
+
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
+
+    dataloader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=args.batch_size,
+        num_workers=args.workers,
+        sampler=sampler,
+        pin_memory=True,
+        drop_last=is_train,
+        shuffle=shuffle
+    )
+    dataloader.num_samples = len(dataset)
+    dataloader.num_batches = len(dataloader)
+
+    return DataInfo(dataloader, sampler)
+
+def get_cifar(args, preprocess_fns, split):
+    assert split in ["train", "val"]
+    is_train = split == "train"
+    preprocess_train, preprocess_val = preprocess_fns
+
+
+    if is_train:
+        data_path  = args.train_data
+        preprocess_fn = preprocess_train
+    else:
+        data_path = args.val_data
+        preprocess_fn = preprocess_val
+    assert data_path
+
+    dataset = datasets.CIFAR100(data_path, train=is_train, transform=preprocess_fn, download=True)
+
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
+
+    dataloader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=args.batch_size,
+        num_workers=args.workers,
+        sampler=sampler,
+        pin_memory=True,
+        drop_last=is_train,
+        shuffle=shuffle
+    )
+    dataloader.num_samples = len(dataset)
+    dataloader.num_batches = len(dataloader)
+
+    return DataInfo(dataloader, sampler)
+
+def get_imagenet_chexpert_joint(args, preprocess_fns, split):
+    assert split in ["train", "val"]
+    is_train = split == "train"
+    preprocess_train, preprocess_val = preprocess_fns
+
+
+    if is_train:
+        chexpert_data_path  = args.train_data
+        imagenet_data_path = args.imagenet_train
+        preprocess_fn = preprocess_train
+    else:
+        chexpert_data_path = args.val_data
+        imagenet_data_path = args.imagenet_val
+        preprocess_fn = preprocess_val
+
+    imagenet_dataset = datasets.ImageFolder(imagenet_data_path, transform=preprocess_fn)
+    chexpert_dataset = CheXpertDataSet(chexpert_data_path,args, transform_train=preprocess_fn)
+    dataset = CustomConcatDataset(imagenet_dataset,chexpert_dataset)
+
+    sampler = DistributedSampler(dataset) if args.distributed and is_train else None
+    shuffle = is_train and sampler is None
+
+    dataloader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=args.batch_size,
+        num_workers=args.workers,
+        sampler=sampler,
+        pin_memory=True,
+        drop_last=is_train,
+        shuffle=shuffle
+    )
+    dataloader.num_samples = len(dataset)
+    dataloader.num_batches = len(dataloader)
+
+    return DataInfo(dataloader, sampler)
+
+
 def count_samples(dataloader):
     os.environ["WDS_EPOCH"] = "0"
     n_elements, n_batches = 0, 0
@@ -344,6 +498,15 @@ def get_data(args, preprocess_fns):
     if args.dataset_type == "chexpert":
         data["train"] = get_chexpert(args, preprocess_fns, "train")
         data["val"] = get_chexpert(args, preprocess_fns, "val")
+    elif args.dataset_type == "nih":
+        data["train"] = get_nih(args, preprocess_fns, "train")
+        data["val"] = get_nih(args, preprocess_fns, "val")
+    elif args.dataset_type == "cifar":
+        data["train"] = get_cifar(args, preprocess_fns, "train")
+        data["val"] = get_cifar(args, preprocess_fns, "val")
+    elif args.dataset_type == "joint":
+        data["train"] = get_imagenet_chexpert_joint(args, preprocess_fns, "train")
+        data["val"] = get_imagenet_chexpert_joint(args, preprocess_fns, "val")
     elif args.dataset_type == "imagenet":
         data["train"] = get_imagenet(args, preprocess_fns, "train")
         data["val"] = get_imagenet(args, preprocess_fns, "val")
