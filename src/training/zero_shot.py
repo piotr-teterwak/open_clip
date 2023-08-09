@@ -15,9 +15,10 @@ def accuracy(output, target, topk=(1,)):
     return [float(correct[:k].reshape(-1).float().sum(0, keepdim=True).cpu().numpy()) for k in topk]
 
 
-def run(model, classifier, dataloader, args):
+def run(model, classifier,llm_features, dataloader, args):
     autocast = get_autocast(args.precision)
     input_dtype = get_input_dtype(args.precision)
+    
 
     with torch.no_grad():
         top1, top5, n = 0., 0., 0.
@@ -27,7 +28,7 @@ def run(model, classifier, dataloader, args):
 
             with autocast():
                 # predict
-                output = model(image=images)
+                output = model(image=images, llm_features=llm_features)
                 image_features = output['image_features'] if isinstance(output, dict) else output[0]
                 logits = 100. * image_features @ classifier
 
@@ -58,7 +59,7 @@ def zero_shot_eval(model, data, epoch, args):
     autocast = get_autocast(args.precision)
     with autocast():
         tokenizer = get_tokenizer(args.model)
-        classifier = build_zero_shot_classifier(
+        classifier, llm_features = build_zero_shot_classifier(
             model,
             tokenizer=tokenizer,
             classnames=IMAGENET_CLASSNAMES,
@@ -66,16 +67,17 @@ def zero_shot_eval(model, data, epoch, args):
             num_classes_per_batch=10,
             device=args.device,
             use_tqdm=True,
+            compute_llm_feats = model.visual_prompt
         )
 
     logging.info('Using classifier')
     results = {}
     if 'imagenet-val' in data:
-        top1, top5 = run(model, classifier, data['imagenet-val'].dataloader, args)
+        top1, top5 = run(model, classifier, llm_features, data['imagenet-val'].dataloader, args)
         results['imagenet-zeroshot-val-top1'] = top1
         results['imagenet-zeroshot-val-top5'] = top5
     if 'imagenet-v2' in data:
-        top1, top5 = run(model, classifier, data['imagenet-v2'].dataloader, args)
+        top1, top5 = run(model, classifier, llm_features, data['imagenet-v2'].dataloader, args)
         results['imagenetv2-zeroshot-val-top1'] = top1
         results['imagenetv2-zeroshot-val-top5'] = top5
 

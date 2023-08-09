@@ -26,6 +26,7 @@ def build_zero_shot_classifier(
         num_classes_per_batch: Optional[int] = 10,
         device: Union[str, torch.device] = 'cpu',
         use_tqdm: bool = False,
+        compute_llm_feats: bool = False
 ):
     """ Build zero-shot classifier weights by iterating over class names in batches
     Args:
@@ -57,15 +58,31 @@ def build_zero_shot_classifier(
         class_embeddings = class_embeddings.reshape(num_batch_classes, num_templates, -1).mean(dim=1)
         class_embeddings = class_embeddings / class_embeddings.norm(dim=1, keepdim=True)
         class_embeddings = class_embeddings.T
-        return class_embeddings
+    
+        if compute_llm_feats:
+            llm_features = model.llm(texts, use_cache=False, output_hidden_states=True)[1][-1]
+            llm_features = F.normalize(llm_features, dim=-1)
+            padding_mask = texts.gt(0)
+            denom = torch.sum(padding_mask, dim=1, keepdim=True)
+            num = torch.sum(llm_features * padding_mask.unsqueeze(-1),dim=1) 
+            llm_features = num/denom
+        else:
+            llm_features = None
 
+        return class_embeddings, llm_features
+
+    llm_features = None
     with torch.no_grad():
         if num_classes_per_batch:
-            batched_embeds = [_process_batch(batch) for batch in iter_wrap(batched(classnames, num_classes_per_batch))]
+            batched_embeds_llm_feats = [_process_batch(batch) for batch in iter_wrap(batched(classnames, num_classes_per_batch))]
+            batched_embeds, batched_llm_feats = list(zip(*batched_embeds_llm_feats))
             zeroshot_weights = torch.cat(batched_embeds, dim=1)
+            if compute_llm_feats:
+                llm_features = torch.cat(batched_llm_feats, dim=0)
+                llm_features = torch.mean(llm_features, dim=0)
         else:
-            zeroshot_weights = _process_batch(classnames)
-    return zeroshot_weights
+            zeroshot_weights, llm_features = _process_batch(classnames)
+    return zeroshot_weights, llm_features
 
 
 def build_zero_shot_classifier_legacy(
