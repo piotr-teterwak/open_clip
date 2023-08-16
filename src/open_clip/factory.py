@@ -79,7 +79,11 @@ def get_tokenizer(model_name):
         tokenizer = HFTokenizer(model_name[len(HF_HUB_PREFIX):])
     else:
         config = get_model_config(model_name)
-        tokenizer = HFTokenizer(
+        double_tokenizer = config['text_cfg'].get('double_tokenizer', False)
+        if double_tokenizer:
+            tokenizer = {'hf_tokenizer': HFTokenizer(config['text_cfg']['hf_tokenizer_name']), 'clip': tokenize}
+        else:
+            tokenizer = HFTokenizer(
             config['text_cfg']['hf_tokenizer_name']) if 'hf_tokenizer_name' in config['text_cfg'] else tokenize
     return tokenizer
 
@@ -101,7 +105,7 @@ def load_checkpoint(model, checkpoint_path, strict=True):
     if 'positional_embedding' in state_dict and not hasattr(model, 'positional_embedding'):
         state_dict = convert_to_custom_text_state_dict(state_dict)
     resize_pos_embed(state_dict, model)
-    incompatible_keys = model.load_state_dict(state_dict, strict=strict)
+    incompatible_keys = model.load_state_dict(state_dict, strict=False)
     return incompatible_keys
 
 
@@ -189,7 +193,7 @@ def create_model(
             else:
                 model = CustomTextCLIP(**model_cfg, cast_dtype=cast_dtype)
         else:
-            model = CLIP(**model_cfg, cast_dtype=cast_dtype)
+            model = CLIP(**model_cfg, cast_dtype=cast_dtype, device=device)
 
         if precision in ("fp16", "bf16"):
             dtype = torch.float16 if 'fp16' in precision else torch.bfloat16
@@ -323,15 +327,16 @@ def create_model_and_transforms(
 
     image_mean = image_mean or getattr(model.visual, 'image_mean', None)
     image_std = image_std or getattr(model.visual, 'image_std', None)
+    image_size = getattr(model.visual, 'transform_image_size', 224) 
     preprocess_train = image_transform(
-        model.visual.image_size,
+        image_size,
         is_train=True,
         mean=image_mean,
         std=image_std,
         aug_cfg=aug_cfg,
     )
     preprocess_val = image_transform(
-        model.visual.image_size,
+        image_size,
         is_train=False,
         mean=image_mean,
         std=image_std,

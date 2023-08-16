@@ -39,6 +39,7 @@ from training.file_utils import pt_load, check_exists, start_sync_process, remot
 
 LATEST_CHECKPOINT_NAME = "epoch_latest.pt"
 
+#torch.multiprocessing.set_sharing_strategy('file_system')
 
 def random_seed(seed=42, rank=0):
     torch.manual_seed(seed + rank)
@@ -306,6 +307,7 @@ def main(args):
         named_parameters = list(model.named_parameters())
         gain_or_bias_params = [p for n, p in named_parameters if exclude(n, p) and p.requires_grad]
         rest_params = [p for n, p in named_parameters if include(n, p) and p.requires_grad]
+
 
         optimizer = optim.AdamW(
             [

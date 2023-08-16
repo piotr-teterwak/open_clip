@@ -13,6 +13,9 @@ import torch.nn.functional as F
 from torch import nn
 from torch.utils.checkpoint import checkpoint
 
+from transformers import AutoTokenizer
+from auto_gptq import AutoGPTQForCausalLM, BaseQuantizeConfig
+
 from .hf_model import HFTextEncoder
 from .modified_resnet import ModifiedResNet
 from .timm_model import TimmModel
@@ -28,6 +31,11 @@ class CLIPVisionCfg:
     mlp_ratio: float = 4.0
     patch_size: int = 16
     image_size: Union[Tuple[int, int], int] = 224
+    transform_image_size: Union[Tuple[int, int], int] = 224
+    visual_prompt: bool = False
+    zero_init_ppn: bool = False
+    demean_normalize: bool = False
+    zero_pad: bool = False
 
     ls_init_value: Optional[float] = None  # layer scale initial value
     patch_dropout: float = 0.  # what fraction of patches to dropout during training (0 would mean disabled and no patches dropped) - 0.5 to 0.75 recommended in the paper for optimal results
@@ -63,7 +71,8 @@ class CLIPTextCfg:
     embed_cls: bool = False
     pad_id: int = 0
     output_tokens: bool = False
-
+    hf_tokenizer: bool = False
+    double_tokenizer: bool = False
 
 def get_cast_dtype(precision: str):
     cast_dtype = None
@@ -142,6 +151,8 @@ def _build_vision_tower(
             norm_layer=norm_layer,
         )
 
+    visual.transform_image_size = vision_cfg.transform_image_size
+
     return visual
 
 
@@ -190,6 +201,7 @@ class CLIP(nn.Module):
     def __init__(
             self,
             embed_dim: int,
+            device: torch.device,  
             vision_cfg: CLIPVisionCfg,
             text_cfg: CLIPTextCfg,
             quick_gelu: bool = False,
@@ -197,10 +209,29 @@ class CLIP(nn.Module):
             output_dict: bool = False,
     ):
         super().__init__()
+        if isinstance(vision_cfg, dict):
+            vision_cfg_native = CLIPVisionCfg(**vision_cfg)
+        else:
+            vision_cfg_native = vision_cfg
+
+
+        if isinstance(vision_cfg, dict):
+            text_cfg_native = CLIPTextCfg(**text_cfg)
+        else:
+            text_cfg_native = text_cfg
+
+
+
         self.output_dict = output_dict
         self.visual = _build_vision_tower(embed_dim, vision_cfg, quick_gelu, cast_dtype)
 
         text = _build_text_tower(embed_dim, text_cfg, quick_gelu, cast_dtype)
+      
+        self.demean_normalize = vision_cfg_native.demean_normalize
+        self.visual_prompt = vision_cfg_native.visual_prompt
+        self.zero_init_ppn = vision_cfg_native.zero_init_ppn
+        self.zero_pad = vision_cfg_native.zero_pad
+        self.hf_tokenizer = text_cfg_native.hf_tokenizer
         self.transformer = text.transformer
         self.context_length = text.context_length
         self.vocab_size = text.vocab_size
@@ -211,6 +242,56 @@ class CLIP(nn.Module):
         self.register_buffer('attn_mask', text.attn_mask, persistent=False)
 
         self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
+        
+        if self.zero_pad:
+            pad_h = int((self.visual.image_size[0] - vision_cfg_native.transform_image_size) // 2)
+            pad_w = int((self.visual.image_size[1] - vision_cfg_native.transform_image_size) // 2)
+            self.pad_dim = (pad_w, pad_w, pad_h, pad_h)
+
+        elif self.visual_prompt:
+            self.model_name_or_path = "TheBloke/Wizard-Vicuna-7B-Uncensored-GPTQ"
+            self.model_basename = "Wizard-Vicuna-7B-Uncensored-GPTQ-4bit-128g.no-act.order"
+
+            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name_or_path, use_fast=True)
+
+            self.llm = AutoGPTQForCausalLM.from_quantized(self.model_name_or_path, 
+                                                          model_basename=self.model_basename, 
+                                                          use_safetensors=True,
+                                                          device= device,
+                                                          trust_remote_code=True, 
+                                                          use_triton=False, 
+                                                          quantize_config=None)
+
+            self.llm_prompt_proj = torch.nn.Linear(4096, 224*224* 3, bias=False)
+
+            if self.zero_init_ppn:
+                torch.nn.init.zeros_(self.llm_prompt_proj.weight)
+
+            for p in self.llm.parameters():
+                p.requires_grad = False
+
+
+            pad_h = int((self.visual.image_size[0] - vision_cfg_native.transform_image_size) // 2)
+            pad_w = int((self.visual.image_size[1] - vision_cfg_native.transform_image_size) // 2)
+            mask = torch.ones((3,) + self.visual.image_size)
+            mask[:, pad_h : self.visual.image_size[0] - pad_h, pad_w: self.visual.image_size[1] - pad_w] = 0
+            self.register_buffer('mask', mask)
+
+            prompt = torch.zeros_like(self.mask)
+            self.register_buffer('prompt', prompt)
+            self.pad_dim = (pad_w, pad_w, pad_h, pad_h)
+            if self.demean_normalize:
+                mean = torch.zeros(4096)
+                self.register_buffer('mean', mean)
+
+    def lock_text_tower(self, unlocked_layers: int = 0, freeze_layer_norm: bool = True):
+        for p in self.transformer.parameters():
+            p.requires_grad=False
+        for p in self.token_embedding.parameters():
+            p.requires_grad=False
+        self.text_projection.requires_grad = False
+
+
 
     def lock_image_tower(self, unlocked_groups=0, freeze_bn_stats=False):
         # lock image tower as per LiT - https://arxiv.org/abs/2111.07991
@@ -225,7 +306,13 @@ class CLIP(nn.Module):
         features = self.visual(image)
         return F.normalize(features, dim=-1) if normalize else features
 
-    def encode_text(self, text, normalize: bool = False):
+    def encode_text(self, text, normalize: bool = False, hf_tokenizer: bool = False):
+        if self.hf_tokenizer:
+            mask = text.gt(0).sum(dim=-1)
+            eot_idx = torch.minimum(mask, torch.ones_like(mask) * 76 ) 
+            max_id = 32001 
+            text[torch.arange(text.shape[0]),eot_idx] = max_id
+
         cast_dtype = self.transformer.get_cast_dtype()
 
         x = self.token_embedding(text).to(cast_dtype)  # [batch_size, n_ctx, d_model]
@@ -236,14 +323,49 @@ class CLIP(nn.Module):
         x = x.permute(1, 0, 2)  # LND -> NLD
         x = self.ln_final(x)  # [batch_size, n_ctx, transformer.width]
         # take features from the eot embedding (eot_token is the highest number in each sequence)
-        x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
+
+        eot_idx = text.argmax(dim=-1)
+
+        x = x[torch.arange(x.shape[0]), eot_idx] @ self.text_projection
         return F.normalize(x, dim=-1) if normalize else x
 
     def forward(
             self,
             image: Optional[torch.Tensor] = None,
-            text: Optional[torch.Tensor] = None,
+            text = None,
+            llm_features: Optional[torch.Tensor] = None,
     ):
+        if isinstance(text, tuple):
+            text_hf = text[0]
+            text = text[1]
+        else:
+            if text is not None:
+                text_hf = torch.clone(text)
+        if self.visual_prompt:
+            if llm_features is None:
+                 with torch.no_grad():
+                     llm_features = self.llm(text_hf, use_cache=False, output_hidden_states=True)[1][-1]
+                     llm_features = F.normalize(llm_features, dim=-1)
+                     padding_mask = text.gt(0)
+                     denom = torch.sum(padding_mask, dim=1, keepdim=True)
+                     num = torch.sum(llm_features * padding_mask.unsqueeze(-1),dim=1) 
+                     llm_features = num/denom
+                     llm_features = torch.mean(llm_features, dim=0)
+                     llm_features = torch.stack(torch.distributed.nn.all_gather(llm_features), dim=0)
+                     llm_features = torch.mean(llm_features, dim=0)
+                     if self.demean_normalize:
+                         llm_features = F.normalize(llm_features, dim=0)
+                         if self.train:
+                            self.mean = self.mean * 0.9 + 0.1 * llm_features
+                         llm_features = llm_features - self.mean
+                         llm_features = F.normalize(llm_features, dim=0)
+            prompt = self.llm_prompt_proj(llm_features).view(1,3,224,224)
+            prompt = prompt.repeat(image.size(0), 1 , 1, 1)
+            prompt = self.mask * prompt
+            image = F.pad(image, self.pad_dim, "constant", value=0)
+            image = image + prompt
+        elif self.zero_pad:
+            image = F.pad(image, self.pad_dim, "constant", value=0)
         image_features = self.encode_image(image, normalize=True) if image is not None else None
         text_features = self.encode_text(text, normalize=True) if text is not None else None
         if self.output_dict:

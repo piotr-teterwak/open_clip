@@ -211,4 +211,9 @@ class HFTokenizer:
             padding='max_length',
             truncation=True,
         ).input_ids
+
+        #eot_idx = max(input_ids.gt(0).sum(dim=-1), context_length -1 ) 
+        #max_id = len(self.tokenizer)
+        #input_ids[torch.arange(input_ids.shape[0]),eot_idx] = max_id
+
         return input_ids

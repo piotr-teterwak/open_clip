@@ -1,16 +1,20 @@
 {
     "embed_dim": 512,
     "vision_cfg": {
+        "demean_normalize": true,
+        "visual_prompt": true, 
+        "zero_init_ppn": true,
+        "transform_image_size":164,
         "image_size": 224,
         "layers": 12,
         "width": 768,
         "patch_size": 32
     },
     "text_cfg": {
-        "hf_tokenizer": true, 
+        "double_tokenizer": true, 
         "hf_tokenizer_name": "TheBloke/Wizard-Vicuna-7B-Uncensored-GPTQ",
         "context_length": 77,
-        "vocab_size": 32002,
+        "vocab_size": 49408,
         "width": 512,
         "heads": 8,
         "layers": 12

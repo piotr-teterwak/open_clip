@@ -90,7 +90,13 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
 
         images, texts = batch
         images = images.to(device=device, dtype=input_dtype, non_blocking=True)
-        texts = texts.to(device=device, non_blocking=True)
+        if isinstance(texts, list):
+            texts = list(zip(*texts))
+            texts_hf = torch.stack(texts[0]).to(device=device, non_blocking=True)
+            texts_clip = torch.stack(texts[1]).to(device=device, non_blocking=True)
+            texts = (texts_hf, texts_clip)
+        else:
+            texts = texts.to(device=device, non_blocking=True)
 
         data_time_m.update(time.time() - end)
         optimizer.zero_grad()
