@@ -9,9 +9,10 @@
         "patch_size": 32
     },
     "text_cfg": {
+        "hf_tokenizer": true,
         "hf_tokenizer_name": "TheBloke/Wizard-Vicuna-7B-Uncensored-GPTQ",
         "context_length": 77,
-        "vocab_size": 49408,
+        "vocab_size": 32002,
         "width": 512,
         "heads": 8,
         "layers": 12

@@ -53,16 +53,23 @@ def build_zero_shot_classifier(
     def _process_batch(batch_classnames):
         num_batch_classes = len(batch_classnames)
         texts = [template.format(c) if use_format else template(c) for c in batch_classnames for template in templates]
-        texts = tokenizer(texts).to(device)
-        class_embeddings = F.normalize(model.encode_text(texts), dim=-1)
+        if isinstance(tokenizer, dict):
+            texts_hf = tokenizer['hf_tokenizer'](texts).to(device)
+            texts_clip = tokenizer['clip'](texts).to(device)
+        else:
+            texts = tokenizer(texts).to(device)
+            texts_hf = torch.clone(texts)
+            texts_clip = torch.clone(texts)
+        class_embeddings = F.normalize(model.encode_text(texts_clip), dim=-1)
         class_embeddings = class_embeddings.reshape(num_batch_classes, num_templates, -1).mean(dim=1)
         class_embeddings = class_embeddings / class_embeddings.norm(dim=1, keepdim=True)
         class_embeddings = class_embeddings.T
-    
+        #print("modified?")
+        #print(texts[0])    
         if compute_llm_feats:
-            llm_features = model.llm(texts, use_cache=False, output_hidden_states=True)[1][-1]
+            llm_features = model.llm(texts_hf, use_cache=False, output_hidden_states=True)[1][-1]
             llm_features = F.normalize(llm_features, dim=-1)
-            padding_mask = texts.gt(0)
+            padding_mask = texts_hf.gt(0)
             denom = torch.sum(padding_mask, dim=1, keepdim=True)
             num = torch.sum(llm_features * padding_mask.unsqueeze(-1),dim=1) 
             llm_features = num/denom

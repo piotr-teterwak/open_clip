@@ -330,6 +330,11 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
     assert input_shards is not None
     resampled = getattr(args, 'dataset_resampled', False) and is_train
 
+    if isinstance(tokenizer, dict):
+        tokenizer_fn = lambda text: (tokenizer['hf_tokenizer'](text)[0], tokenizer['clip'](text)[0])
+    else:
+        tokenizer_fn = lambda text: tokenizer(text)[0]
+
     num_shards = None
     if is_train:
         if args.train_num_samples is not None:
@@ -389,7 +394,7 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
         wds.select(filter_no_caption_or_no_image),
         wds.decode("pilrgb", handler=log_and_continue),
         wds.rename(image="jpg;png;jpeg;webp", text="txt"),
-        wds.map_dict(image=preprocess_img, text=lambda text: tokenizer(text)[0]),
+        wds.map_dict(image=preprocess_img, text=tokenizer_fn),
         wds.to_tuple("image", "text"),
         wds.batched(args.batch_size, partial=not is_train)
     ])
@@ -419,6 +424,7 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
         shuffle=False,
         num_workers=args.workers,
         persistent_workers=args.workers > 0,
+        #persistent_workers=False,
     )
 
     # FIXME not clear which approach is better, with_epoch before vs after dataloader?
