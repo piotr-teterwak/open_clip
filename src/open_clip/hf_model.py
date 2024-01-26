@@ -552,7 +552,7 @@ class HFTextEncoder(nn.Module):
             pooler_kwargs["in_dim"] = d_model
             pooler_kwargs["hidden_dim"] = hidden_dim
             d_model = hidden_dim
-        elif pooler_type == "eos_attention_pooler":
+        elif pooler_type == "eos_attention_pooler" or pooler_type == "all_attention_pooler":
             pooler_kwargs["in_dim"] = d_model
             pooler_kwargs["num_tokens"] = self.num_prompt_tokens
         elif pooler_type == "efficient_eos_attention_pooler":
