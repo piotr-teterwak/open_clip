@@ -160,7 +160,7 @@ def _create_mask_func(prompt_tuning_tokens):
                 device=inputs_embeds.device,
                 past_key_values_length=past_key_values_length,
             )
-    
+
         if attention_mask is not None:
             # [bsz, seq_len] -> [bsz, 1, tgt_seq_len, src_seq_len]
             expanded_attn_mask = _expand_mask(attention_mask, inputs_embeds.dtype, tgt_len=input_shape[-1]).to(
@@ -169,8 +169,8 @@ def _create_mask_func(prompt_tuning_tokens):
             combined_attention_mask = (
                 expanded_attn_mask if combined_attention_mask is None else expanded_attn_mask + combined_attention_mask
             )
-    
-            combined_attention_mask[:,:,:-prompt_tuning_tokens,-prompt_tuning_tokens:] = torch.finfo(inputs_embeds.dtype).min    
+
+            combined_attention_mask[:,:,:-prompt_tuning_tokens,-prompt_tuning_tokens:] = torch.finfo(inputs_embeds.dtype).min
             combined_attention_mask[:,:,-prompt_tuning_tokens:,:] = 0.0
         return combined_attention_mask
     return _prepare_decoder_attention_mask
@@ -261,6 +261,29 @@ class EosAttentionPooler(nn.Module):
         nn.init.trunc_normal_(self.cls_q, std=0.02)
         self.apply(self._init_weights)
         self.num_tokens = num_tokens
+
+    def forward(self, x: BaseModelOutput, attention_mask: TensorType):
+        batch_size = x.hidden_states[-1].shape[0]
+        x = x.hidden_states[-1][:, -self.num_tokens:, :]
+        query = torch.tile(self.cls_q,(batch_size,1,1))
+        x = self.attn_pool(query,x,x)[0]
+        x = x[:,0,:]
+        return self.norm(x)
+
+@register_pooler
+class AllAttentionPooler(nn.Module):
+    def __init__(self,
+        in_dim,
+        num_tokens,
+        norm =nn.LayerNorm
+    ):
+        super().__init__()
+        self.attn_pool = nn.MultiheadAttention(in_dim,8,batch_first=True)
+        self.cls_q = nn.Parameter(torch.zeros(1,1,in_dim))
+        self.norm = norm(in_dim)
+        nn.init.trunc_normal_(self.cls_q, std=0.02)
+        self.apply(self._init_weights)
+        self.num_tokens = 0
 
     def forward(self, x: BaseModelOutput, attention_mask: TensorType):
         batch_size = x.hidden_states[-1].shape[0]
@@ -388,12 +411,12 @@ class LearnedEosPooler(nn.Module):
 
 
 class PartialOverrideEmbedding(nn.Module):
-    def __init__(self, 
+    def __init__(self,
                 wte: nn.Embedding,
                 start_override: int = 110, # [unused100] for my transformer
                 length_override: int = 800, # [unused900] for my transformer
                 initialize_from_vocab: bool = True):
-        """appends learned embedding to 
+        """appends learned embedding to
         Args:
             wte (nn.Embedding): original transformer word embedding
             start_override (int, optional): first token id which will be trained separately. Defaults to 110 ([unused100] for BERT).
@@ -404,7 +427,8 @@ class PartialOverrideEmbedding(nn.Module):
         self.start_override = start_override
         self.length_override = length_override
         self.wte = wte
-        #self.reparam = ResMLP() 
+        self.wte.weight.requires_grad=False
+        #self.reparam = ResMLP()
         self.wte_override = nn.Embedding(
             length_override, wte.weight.shape[1]
         )
@@ -412,10 +436,10 @@ class PartialOverrideEmbedding(nn.Module):
             with torch.no_grad():
                 #self.wte_override.weight[:] = torch.mean(wte.weight,dim=0,keepdims=True)
                 self.wte_override.weight[:] = self.wte.weight[self.start_override:self.start_override+self.length_override] + torch.mean(wte.weight[0:self.start_override],dim=0,keepdims=True)
-        self.initial_start_override = start_override 
+        self.initial_start_override = start_override
         self.initial_start_override = start_override
         self.initial_length_override = length_override
-            
+
     def forward(self, tokens):
         """run forward pass
         Args:
@@ -424,7 +448,7 @@ class PartialOverrideEmbedding(nn.Module):
             torch.float: encoding of text concatenated with learned task specifc embedding
         """
         # Detect which tokens are not in range for the override, and prepare masks for them
-        mask_below = (tokens < self.start_override) 
+        mask_below = (tokens < self.start_override)
         mask_above = (tokens >= self.start_override + self.length_override)
         mask_out = torch.logical_or(mask_below, mask_above)
 
@@ -438,7 +462,7 @@ class PartialOverrideEmbedding(nn.Module):
         modified_tokens[mask_out] = 0
         # Get the
         #embedded_tokens_after_override = self.reparam(self.wte_override(modified_tokens))
-        embedded_tokens_after_override = self.wte_override(modified_tokens) 
+        embedded_tokens_after_override = self.wte_override(modified_tokens)
         #embedded_tokens_after_override += torch.normal(torch.zeros_like(embedded_tokens_after_override), torch.ones_like(embedded_tokens_after_override)*0.02)
 
         # And finally change appropriate tokens from placeholder embedding created by
@@ -462,7 +486,7 @@ class HFTextEncoder(nn.Module):
             self,
             model_name_or_path: str,
             output_dim: int,
-            hidden_dim: int, 
+            hidden_dim: int,
             config: PretrainedConfig = None,
             pooler_type: str = None,
             proj: str = None,
@@ -534,7 +558,7 @@ class HFTextEncoder(nn.Module):
         elif pooler_type == "efficient_eos_attention_pooler":
             pooler_kwargs["in_dim"] = d_model
             pooler_kwargs["num_tokens"] = self.num_prompt_tokens
-            pooler_kwargs["h_dim"] = output_dim 
+            pooler_kwargs["h_dim"] = output_dim
             d_model = output_dim
         elif pooler_type == "eos_pooler":
             pooler_kwargs["num_tokens"] = self.num_prompt_tokens
@@ -546,10 +570,10 @@ class HFTextEncoder(nn.Module):
         self.vocab_size = getattr(self.config, 'vocab_size', 0)
         self.context_length = getattr(self.config, 'max_position_embeddings', 0)
 
-        
+
         self.pooler = _POOLERS[pooler_type](**pooler_kwargs)
-        
-        
+
+
 
         if self.prompt_tuning == True:
             #This was moved, remember for eval
@@ -560,10 +584,10 @@ class HFTextEncoder(nn.Module):
 
             if isinstance(self.transformer, peft.peft_model.PeftModel):
                 self.transformer.model.model.embed_tokens = PartialOverrideEmbedding(self.transformer.model.model.embed_tokens, start_override= self.vocab_size , length_override=self.num_prompt_tokens + self.num_prefix_tokens)
-                self.transformer.model.model_prepare_decoder_attention_mask = types.MethodType( _create_mask_func(self.num_prompt_tokens), self.transformer.model.model) 
+                self.transformer.model.model_prepare_decoder_attention_mask = types.MethodType( _create_mask_func(self.num_prompt_tokens), self.transformer.model.model)
             else:
                 self.transformer.model.embed_tokens = PartialOverrideEmbedding(self.transformer.model.embed_tokens, start_override= self.vocab_size , length_override=self.num_prompt_tokens + self.num_prefix_tokens)
-                self.transformer.model._prepare_decoder_attention_mask = types.MethodType( _create_mask_func(self.num_prompt_tokens), self.transformer.model) 
+                self.transformer.model._prepare_decoder_attention_mask = types.MethodType( _create_mask_func(self.num_prompt_tokens), self.transformer.model)
 
         if (d_model == output_dim) and (proj is None):  # do we always need a proj?
             self.proj = nn.Identity()
@@ -586,13 +610,13 @@ class HFTextEncoder(nn.Module):
                 prefix_token = torch.tile(self.learned_prefix,(batch_size,1))
                 x = torch.cat((prefix_token,x),dim=1)
         attn_mask = (x != self.config.pad_token_id).long()
-        
+
         if self.generate:
-            generate_config = GenerationConfig(max_new_tokens=100, 
+            generate_config = GenerationConfig(max_new_tokens=100,
                     do_sample=False,
                     return_dict_in_generate=True,
                     output_hidden_states=True)
-            out = self.transformer.generate(input_ids=x, 
+            out = self.transformer.generate(input_ids=x,
                     attention_mask=attn_mask,
                     generation_config=generate_config)
             gen_states = [states[-1] for states in out.hidden_states]
@@ -606,11 +630,11 @@ class HFTextEncoder(nn.Module):
 
         seq_len = out.hidden_states[-1].shape[1]
         tokens = (
-            out.hidden_states[-1][:, torch.arange(seq_len) != self.pooler.cls_token_position, :] 
-            if type(self.pooler) == ClsPooler 
+            out.hidden_states[-1][:, torch.arange(seq_len) != self.pooler.cls_token_position, :]
+            if type(self.pooler) == ClsPooler
             else out.hidden_states[-1]
         )
-        
+
         if self.output_tokens:
             return projected, tokens
         return projected
