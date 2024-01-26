@@ -12,8 +12,8 @@
         "proj": "linear",
         "pooler_type": "all_attention_pooler",
         "load_pretrained": true,
-        "prompt_tuning": false,
+        "prompt_tuning": true,
         "lora": true,
-        "num_prompt_tokens": 0
+        "num_prompt_tokens": 1
     }
 }

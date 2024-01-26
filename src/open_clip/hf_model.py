@@ -283,11 +283,11 @@ class AllAttentionPooler(nn.Module):
         self.norm = norm(in_dim)
         nn.init.trunc_normal_(self.cls_q, std=0.02)
         self.apply(self._init_weights)
-        self.num_tokens = 0
+        self.num_tokens = num_tokens
 
     def forward(self, x: BaseModelOutput, attention_mask: TensorType):
         batch_size = x.hidden_states[-1].shape[0]
-        x = x.hidden_states[-1][:, -self.num_tokens:, :]
+        x = x.hidden_states[-1][:, :-self.num_tokens, :]
         query = torch.tile(self.cls_q,(batch_size,1,1))
         x = self.attn_pool(query,x,x)[0]
         x = x[:,0,:]
