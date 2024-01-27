@@ -131,7 +131,7 @@ def load_checkpoint(model, checkpoint_path, strict=True):
    #    else:
    #         new_state_dict[k] = v
    # state_dict=new_state_dict
-   # strict=False
+    strict=False
     incompatible_keys = model.load_state_dict(state_dict, strict=strict)
     return incompatible_keys
 
