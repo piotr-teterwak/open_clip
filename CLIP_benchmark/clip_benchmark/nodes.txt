@@ -1,0 +1,2751 @@
+NodeName=a100-st2-p4de24xlarge-0 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.30
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-0 NodeHostName=a100-st2-p4de24xlarge-0 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117221 Sockets=48 Boards=1
+   State=IDLE+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T13:24:58 SlurmdStartTime=2023-10-19T13:29:46
+   LastBusyTime=2023-10-19T13:30:01
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T16:41:33]
+
+NodeName=a100-st2-p4de24xlarge-1 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.35
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-1 NodeHostName=a100-st2-p4de24xlarge-1 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=762399 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T16:54:00 SlurmdStartTime=2023-09-08T16:57:52
+   LastBusyTime=2023-10-19T21:31:16
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-2 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=23.15
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-2 NodeHostName=a100-st2-p4de24xlarge-2 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=605215 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:22:34 SlurmdStartTime=2023-09-08T15:26:14
+   LastBusyTime=2023-10-18T12:26:02
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-3 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=23.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-3 NodeHostName=a100-st2-p4de24xlarge-3 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=589056 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:45:41 SlurmdStartTime=2023-09-08T15:49:07
+   LastBusyTime=2023-10-18T12:26:41
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-4 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=26.00
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-4 NodeHostName=a100-st2-p4de24xlarge-4 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=760272 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:18:10 SlurmdStartTime=2023-09-08T15:21:46
+   LastBusyTime=2023-10-18T09:03:59
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-5 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=23.14
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-5 NodeHostName=a100-st2-p4de24xlarge-5 Version=22.05.2
+   OS=Linux 5.15.0-1044-aws #49~20.04.1-Ubuntu SMP Mon Aug 21 17:09:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=768571 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-29T22:09:42 SlurmdStartTime=2023-09-29T22:16:47
+   LastBusyTime=2023-10-18T09:03:59
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-6 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=0.22
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-6 NodeHostName=a100-st2-p4de24xlarge-6 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=682920 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-07T15:20:23 SlurmdStartTime=2023-09-07T15:24:09
+   LastBusyTime=2023-10-19T02:56:09
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-7 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=85.56
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-7 NodeHostName=a100-st2-p4de24xlarge-7 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=219890 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:45:16 SlurmdStartTime=2023-09-08T15:48:47
+   LastBusyTime=2023-10-18T06:10:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-8 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=8.19
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-8 NodeHostName=a100-st2-p4de24xlarge-8 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1031120 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T21:31:33 SlurmdStartTime=2023-10-19T21:36:55
+   LastBusyTime=2023-10-20T00:38:20
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-9 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=17.19
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-9 NodeHostName=a100-st2-p4de24xlarge-9 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=413437 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:51:21 SlurmdStartTime=2023-09-08T15:54:20
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-10 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=0.15
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-10 NodeHostName=a100-st2-p4de24xlarge-10 Version=22.05.2
+   OS=Linux 5.15.0-1044-aws #49~20.04.1-Ubuntu SMP Mon Aug 21 17:09:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=713545 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-29T20:07:30 SlurmdStartTime=2023-09-29T20:12:44
+   LastBusyTime=2023-10-19T19:22:25
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-11 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=24 CPUEfctv=96 CPUTot=96 CPULoad=2.29
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-11 NodeHostName=a100-st2-p4de24xlarge-11 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=841214 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-08T15:49:34 SlurmdStartTime=2023-09-08T15:52:46
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=24,gres/gpu=2
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-12 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=109.75
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-12 NodeHostName=a100-st2-p4de24xlarge-12 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=571991 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:07:30 SlurmdStartTime=2023-09-06T23:11:24
+   LastBusyTime=2023-10-18T14:16:11
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-13 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=0.12
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-13 NodeHostName=a100-st2-p4de24xlarge-13 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=736248 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:17:52 SlurmdStartTime=2023-09-06T23:20:50
+   LastBusyTime=2023-10-19T18:01:19
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-14 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=16.93
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-14 NodeHostName=a100-st2-p4de24xlarge-14 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=651621 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:37 SlurmdStartTime=2023-09-06T23:30:43
+   LastBusyTime=2023-10-19T00:44:37
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-15 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=16.93
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-15 NodeHostName=a100-st2-p4de24xlarge-15 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=619002 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:16 SlurmdStartTime=2023-09-06T23:11:23
+   LastBusyTime=2023-10-19T00:46:35
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-16 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=16.31
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-16 NodeHostName=a100-st2-p4de24xlarge-16 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=718404 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:11 SlurmdStartTime=2023-09-06T23:30:15
+   LastBusyTime=2023-10-18T14:17:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-17 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=16.61
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-17 NodeHostName=a100-st2-p4de24xlarge-17 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=688912 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:18 SlurmdStartTime=2023-09-06T23:30:17
+   LastBusyTime=2023-10-18T14:17:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-18 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=59.02
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-18 NodeHostName=a100-st2-p4de24xlarge-18 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=263215 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T22:24:04 SlurmdStartTime=2023-09-06T22:27:33
+   LastBusyTime=2023-10-19T20:01:52
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-19 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=84.79
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-19 NodeHostName=a100-st2-p4de24xlarge-19 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=277951 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:12 SlurmdStartTime=2023-09-06T23:11:15
+   LastBusyTime=2023-10-19T20:01:52
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-20 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=62.31
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-20 NodeHostName=a100-st2-p4de24xlarge-20 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=434858 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T15:03:53 SlurmdStartTime=2023-10-19T15:09:15
+   LastBusyTime=2023-10-19T20:58:16
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-21 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=10.91
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-21 NodeHostName=a100-st2-p4de24xlarge-21 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=500031 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:10 SlurmdStartTime=2023-09-06T23:30:13
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-22 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=56 CPUEfctv=96 CPUTot=96 CPULoad=5.46
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-22 NodeHostName=a100-st2-p4de24xlarge-22 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=688854 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:52:15 SlurmdStartTime=2023-09-06T23:55:49
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=56,gres/gpu=5
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-23 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=181.47
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-23 NodeHostName=a100-st2-p4de24xlarge-23 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=286360 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:57:31 SlurmdStartTime=2023-09-07T00:00:52
+   LastBusyTime=2023-10-18T10:05:52
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-24 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=20.97
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-24 NodeHostName=a100-st2-p4de24xlarge-24 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=3912 Sockets=48 Boards=1
+   State=DOWN+NOT_RESPONDING ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:11 SlurmdStartTime=2023-09-06T23:11:16
+   LastBusyTime=2023-10-20T02:41:59
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=Not responding [slurm@2023-10-20T02:41:59]
+
+NodeName=a100-st2-p4de24xlarge-25 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=110.36
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-25 NodeHostName=a100-st2-p4de24xlarge-25 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=653526 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T17:32:30 SlurmdStartTime=2023-10-19T17:37:54
+   LastBusyTime=2023-10-20T01:47:42
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-26 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=52 CPUEfctv=96 CPUTot=96 CPULoad=12.95
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-26 NodeHostName=a100-st2-p4de24xlarge-26 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=832667 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:12 SlurmdStartTime=2023-09-06T23:11:13
+   LastBusyTime=2023-10-19T18:00:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=52,gres/gpu=5
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-27 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=23.94
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-27 NodeHostName=a100-st2-p4de24xlarge-27 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=703507 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:12:26 SlurmdStartTime=2023-09-06T23:15:21
+   LastBusyTime=2023-10-18T12:02:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-28 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=24.17
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-28 NodeHostName=a100-st2-p4de24xlarge-28 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=622720 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:39 SlurmdStartTime=2023-09-06T23:30:52
+   LastBusyTime=2023-10-18T12:02:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-29 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=24.03
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-29 NodeHostName=a100-st2-p4de24xlarge-29 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=767821 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:41 SlurmdStartTime=2023-09-06T23:30:54
+   LastBusyTime=2023-10-18T12:02:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-30 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=24.18
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-30 NodeHostName=a100-st2-p4de24xlarge-30 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=504164 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:17:40 SlurmdStartTime=2023-09-06T23:20:43
+   LastBusyTime=2023-10-18T12:02:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-31 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=107.33
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-31 NodeHostName=a100-st2-p4de24xlarge-31 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=429637 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:00 SlurmdStartTime=2023-09-06T23:11:06
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-32 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=50 CPUEfctv=96 CPUTot=96 CPULoad=12.28
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-32 NodeHostName=a100-st2-p4de24xlarge-32 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=764441 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:06 SlurmdStartTime=2023-09-06T23:11:13
+   LastBusyTime=2023-10-19T20:58:21
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=50,gres/gpu=4
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-33 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.09
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-33 NodeHostName=a100-st2-p4de24xlarge-33 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=900665 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-08T05:40:35 SlurmdStartTime=2023-10-08T06:13:22
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-34 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=20.26
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-34 NodeHostName=a100-st2-p4de24xlarge-34 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=861362 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-07T10:22:00 SlurmdStartTime=2023-09-07T10:26:09
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-35 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=64 CPUEfctv=96 CPUTot=96 CPULoad=17.00
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-35 NodeHostName=a100-st2-p4de24xlarge-35 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=211750 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:52:32 SlurmdStartTime=2023-09-06T23:55:49
+   LastBusyTime=2023-10-18T14:09:45
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=64,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-36 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=26.20
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-36 NodeHostName=a100-st2-p4de24xlarge-36 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=764419 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:09 SlurmdStartTime=2023-09-06T23:30:18
+   LastBusyTime=2023-10-19T01:09:12
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-37 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=26.01
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-37 NodeHostName=a100-st2-p4de24xlarge-37 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=678021 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:13 SlurmdStartTime=2023-09-06T23:11:38
+   LastBusyTime=2023-10-19T01:09:12
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-38 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=26.66
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-38 NodeHostName=a100-st2-p4de24xlarge-38 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=797655 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T22:52:57 SlurmdStartTime=2023-09-06T22:56:49
+   LastBusyTime=2023-10-19T01:09:12
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-39 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=26.25
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-39 NodeHostName=a100-st2-p4de24xlarge-39 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=674355 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:15 SlurmdStartTime=2023-09-06T23:30:22
+   LastBusyTime=2023-10-19T01:09:12
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-40 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=50 CPUEfctv=96 CPUTot=96 CPULoad=12.16
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-40 NodeHostName=a100-st2-p4de24xlarge-40 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1061634 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:28:12 SlurmdStartTime=2023-09-06T23:31:18
+   LastBusyTime=2023-10-19T20:01:32
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=50,gres/gpu=4
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-41 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=50 CPUEfctv=96 CPUTot=96 CPULoad=11.74
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-41 NodeHostName=a100-st2-p4de24xlarge-41 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=914387 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:12 SlurmdStartTime=2023-09-06T23:11:30
+   LastBusyTime=2023-10-19T20:20:36
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=50,gres/gpu=4
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-42 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.13
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-42 NodeHostName=a100-st2-p4de24xlarge-42 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117442 Sockets=48 Boards=1
+   State=IDLE+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:18:24 SlurmdStartTime=2023-10-19T14:26:23
+   LastBusyTime=2023-10-19T14:26:55
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T13:24:43]
+
+NodeName=a100-st2-p4de24xlarge-43 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=64 CPUEfctv=96 CPUTot=96 CPULoad=9.53
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-43 NodeHostName=a100-st2-p4de24xlarge-43 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=730793 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:09 SlurmdStartTime=2023-09-06T23:11:11
+   LastBusyTime=2023-10-18T14:09:45
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=64,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-44 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=64 CPUEfctv=96 CPUTot=96 CPULoad=10.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-44 NodeHostName=a100-st2-p4de24xlarge-44 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=498303 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:09:31 SlurmdStartTime=2023-09-06T23:12:30
+   LastBusyTime=2023-10-18T13:25:21
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=64,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-45 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.07
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-45 NodeHostName=a100-st2-p4de24xlarge-45 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1107434 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T19:59:51 SlurmdStartTime=2023-10-19T20:04:49
+   LastBusyTime=2023-10-19T21:20:11
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-46 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-46 NodeHostName=a100-st2-p4de24xlarge-46 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1099386 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:05 SlurmdStartTime=2023-09-06T23:30:51
+   LastBusyTime=2023-10-19T21:08:51
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-47 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.06
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-47 NodeHostName=a100-st2-p4de24xlarge-47 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=701174 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:17:34 SlurmdStartTime=2023-09-06T23:20:30
+   LastBusyTime=2023-10-19T16:28:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-48 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=1.16
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-48 NodeHostName=a100-st2-p4de24xlarge-48 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=786905 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:17:27 SlurmdStartTime=2023-09-06T23:20:44
+   LastBusyTime=2023-10-17T21:51:39
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-49 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.06
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-49 NodeHostName=a100-st2-p4de24xlarge-49 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=914689 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:23 SlurmdStartTime=2023-09-06T23:30:34
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-50 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=1.10
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-50 NodeHostName=a100-st2-p4de24xlarge-50 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1014356 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:12 SlurmdStartTime=2023-09-06T23:30:11
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-51 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.05
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-51 NodeHostName=a100-st2-p4de24xlarge-51 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117385 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:36:00 SlurmdStartTime=2023-10-19T14:39:49
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-52 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-52 NodeHostName=a100-st2-p4de24xlarge-52 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117432 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:35:58 SlurmdStartTime=2023-10-19T14:39:42
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-53 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.11
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-53 NodeHostName=a100-st2-p4de24xlarge-53 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117269 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:37:25 SlurmdStartTime=2023-10-19T14:40:46
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-54 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.06
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-54 NodeHostName=a100-st2-p4de24xlarge-54 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117393 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:36:55 SlurmdStartTime=2023-10-19T14:40:16
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-55 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.22
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-55 NodeHostName=a100-st2-p4de24xlarge-55 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117288 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:37:46 SlurmdStartTime=2023-10-19T14:41:18
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-56 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.07
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-56 NodeHostName=a100-st2-p4de24xlarge-56 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117444 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:34:48 SlurmdStartTime=2023-10-19T14:39:42
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-57 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.05
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-57 NodeHostName=a100-st2-p4de24xlarge-57 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117351 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:35:53 SlurmdStartTime=2023-10-19T14:39:42
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-58 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.03
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-58 NodeHostName=a100-st2-p4de24xlarge-58 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117232 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:34:42 SlurmdStartTime=2023-10-19T14:40:12
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-59 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.07
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-59 NodeHostName=a100-st2-p4de24xlarge-59 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1117296 Sockets=48 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T14:36:16 SlurmdStartTime=2023-10-19T14:39:42
+   LastBusyTime=2023-10-19T14:44:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-60 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.89
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-60 NodeHostName=a100-st2-p4de24xlarge-60 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=794145 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:17:47 SlurmdStartTime=2023-09-06T23:21:02
+   LastBusyTime=2023-10-18T19:37:32
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=1
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-61 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=107.37
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-61 NodeHostName=a100-st2-p4de24xlarge-61 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=468307 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:07 SlurmdStartTime=2023-09-06T23:11:20
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-62 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=95.48
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-62 NodeHostName=a100-st2-p4de24xlarge-62 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=564062 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T16:07:47 SlurmdStartTime=2023-10-19T16:11:36
+   LastBusyTime=2023-10-19T21:20:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-63 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=96 CPUTot=96 CPULoad=0.21
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-63 NodeHostName=a100-st2-p4de24xlarge-63 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=689379 Sockets=48 Boards=1
+   State=IDLE+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:27:22 SlurmdStartTime=2023-09-06T23:30:20
+   LastBusyTime=2023-10-20T00:18:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-64 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=95.97
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-64 NodeHostName=a100-st2-p4de24xlarge-64 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=491182 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T15:33:43 SlurmdStartTime=2023-10-19T15:37:15
+   LastBusyTime=2023-10-20T03:30:04
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-65 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=50 CPUEfctv=96 CPUTot=96 CPULoad=12.45
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-65 NodeHostName=a100-st2-p4de24xlarge-65 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1063327 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T16:06:14 SlurmdStartTime=2023-10-19T16:11:32
+   LastBusyTime=2023-10-19T20:53:47
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=50,gres/gpu=4
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-66 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=88.92
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-66 NodeHostName=a100-st2-p4de24xlarge-66 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=586398 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T22:35:43 SlurmdStartTime=2023-10-19T22:41:48
+   LastBusyTime=2023-10-19T22:42:04
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-67 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=21.37
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-67 NodeHostName=a100-st2-p4de24xlarge-67 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=868315 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-06T23:08:17 SlurmdStartTime=2023-09-06T23:11:38
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-68 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=50 CPUEfctv=96 CPUTot=96 CPULoad=14.38
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-68 NodeHostName=a100-st2-p4de24xlarge-68 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=937633 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-10-19T15:33:19 SlurmdStartTime=2023-10-19T15:36:52
+   LastBusyTime=2023-10-19T17:45:46
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=50,gres/gpu=4
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-69 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.93
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-69 NodeHostName=a100-st2-p4de24xlarge-69 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=536107 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,tier0 
+   BootTime=2023-09-07T01:11:49 SlurmdStartTime=2023-09-07T01:15:30
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-70 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=10.10
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-70 NodeHostName=a100-st2-p4de24xlarge-70 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=979267 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:08:11 SlurmdStartTime=2023-09-06T23:11:23
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-71 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=10.48
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-71 NodeHostName=a100-st2-p4de24xlarge-71 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=632052 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T15:24:06 SlurmdStartTime=2023-10-19T15:29:29
+   LastBusyTime=2023-10-19T17:15:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-72 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=82.39
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-72 NodeHostName=a100-st2-p4de24xlarge-72 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=448307 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:27:37 SlurmdStartTime=2023-09-06T23:30:44
+   LastBusyTime=2023-10-17T15:37:38
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-19T14:00:52]
+
+NodeName=a100-st2-p4de24xlarge-73 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=90 CPUEfctv=96 CPUTot=96 CPULoad=12.52
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-73 NodeHostName=a100-st2-p4de24xlarge-73 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1057451 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T19:59:51 SlurmdStartTime=2023-10-19T20:04:49
+   LastBusyTime=2023-10-19T20:21:46
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=90,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-74 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=66.16
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-74 NodeHostName=a100-st2-p4de24xlarge-74 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=381060 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T18:11:43 SlurmdStartTime=2023-10-19T18:16:38
+   LastBusyTime=2023-10-19T21:10:50
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-75 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=90 CPUEfctv=96 CPUTot=96 CPULoad=11.45
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-75 NodeHostName=a100-st2-p4de24xlarge-75 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1047258 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T18:06:03 SlurmdStartTime=2023-10-19T18:11:06
+   LastBusyTime=2023-10-19T21:00:56
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=90,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-76 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=89.13
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-76 NodeHostName=a100-st2-p4de24xlarge-76 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=462138 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-07T01:10:21 SlurmdStartTime=2023-09-07T01:14:37
+   LastBusyTime=2023-10-19T23:16:45
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-77 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.52
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-77 NodeHostName=a100-st2-p4de24xlarge-77 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=909394 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-06T20:52:34 SlurmdStartTime=2023-10-06T20:57:09
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-78 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=0.05
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-78 NodeHostName=a100-st2-p4de24xlarge-78 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1086851 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T18:33:17 SlurmdStartTime=2023-10-19T18:38:19
+   LastBusyTime=2023-10-19T18:38:35
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-79 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=90 CPUEfctv=96 CPUTot=96 CPULoad=13.00
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-79 NodeHostName=a100-st2-p4de24xlarge-79 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1008775 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T13:25:14 SlurmdStartTime=2023-10-19T13:29:46
+   LastBusyTime=2023-10-19T20:01:52
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=90,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-80 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.08
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-80 NodeHostName=a100-st2-p4de24xlarge-80 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=803058 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:16:48 SlurmdStartTime=2023-09-06T23:20:34
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-81 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=84.50
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-81 NodeHostName=a100-st2-p4de24xlarge-81 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=630590 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:49:27 SlurmdStartTime=2023-10-18T18:53:29
+   LastBusyTime=2023-10-19T15:47:17
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-82 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=10.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-82 NodeHostName=a100-st2-p4de24xlarge-82 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=609366 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:08:09 SlurmdStartTime=2023-09-06T23:11:05
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-83 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=10.31
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-83 NodeHostName=a100-st2-p4de24xlarge-83 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=804449 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:08:18 SlurmdStartTime=2023-09-06T23:11:27
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-84 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=101.68
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-84 NodeHostName=a100-st2-p4de24xlarge-84 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=438439 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:13:27 SlurmdStartTime=2023-09-06T23:16:36
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-85 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=97.79
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-85 NodeHostName=a100-st2-p4de24xlarge-85 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=639268 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T13:25:18 SlurmdStartTime=2023-10-19T13:29:46
+   LastBusyTime=2023-10-19T14:52:14
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-86 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=5.44
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-86 NodeHostName=a100-st2-p4de24xlarge-86 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1080309 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T13:25:22 SlurmdStartTime=2023-10-19T13:29:46
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-87 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.79
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-87 NodeHostName=a100-st2-p4de24xlarge-87 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1081235 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T13:33:50 SlurmdStartTime=2023-10-19T13:38:51
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-88 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=0.12
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-88 NodeHostName=a100-st2-p4de24xlarge-88 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1094038 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:49:44 SlurmdStartTime=2023-10-18T18:53:09
+   LastBusyTime=2023-10-18T23:09:29
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-89 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=34.63
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-89 NodeHostName=a100-st2-p4de24xlarge-89 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1024265 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T18:05:44 SlurmdStartTime=2023-10-19T18:10:56
+   LastBusyTime=2023-10-19T19:21:39
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-90 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=21.14
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-90 NodeHostName=a100-st2-p4de24xlarge-90 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=812898 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-09-06T23:14:26 SlurmdStartTime=2023-09-06T23:17:39
+   LastBusyTime=2023-10-17T16:31:23
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:43:04]
+
+NodeName=a100-st2-p4de24xlarge-91 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=20.23
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-91 NodeHostName=a100-st2-p4de24xlarge-91 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1035799 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T13:34:08 SlurmdStartTime=2023-10-19T13:38:33
+   LastBusyTime=2023-10-19T13:48:51
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-92 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=28.52
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-92 NodeHostName=a100-st2-p4de24xlarge-92 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1024104 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-19T18:30:11 SlurmdStartTime=2023-10-19T18:35:33
+   LastBusyTime=2023-10-19T18:35:49
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-93 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.05
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-93 NodeHostName=a100-st2-p4de24xlarge-93 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=966451 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:47:07 SlurmdStartTime=2023-10-18T18:51:05
+   LastBusyTime=2023-10-19T18:28:44
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-94 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=36.59
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-94 NodeHostName=a100-st2-p4de24xlarge-94 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=930025 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:48:57 SlurmdStartTime=2023-10-18T18:52:23
+   LastBusyTime=2023-10-20T03:45:38
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-95 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=1.45
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-95 NodeHostName=a100-st2-p4de24xlarge-95 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=375160 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-20T02:36:13 SlurmdStartTime=2023-10-20T02:41:54
+   LastBusyTime=2023-10-20T02:42:09
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=1
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-96 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=7.97
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-96 NodeHostName=a100-st2-p4de24xlarge-96 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=984026 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:46:32 SlurmdStartTime=2023-10-18T18:51:05
+   LastBusyTime=2023-10-20T03:45:10
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-97 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=8.00
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-97 NodeHostName=a100-st2-p4de24xlarge-97 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1011607 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:48:06 SlurmdStartTime=2023-10-18T18:51:35
+   LastBusyTime=2023-10-20T03:45:10
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-98 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=8.17
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-98 NodeHostName=a100-st2-p4de24xlarge-98 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1011432 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:47:27 SlurmdStartTime=2023-10-18T18:51:18
+   LastBusyTime=2023-10-20T03:45:10
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-99 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=8.05
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-99 NodeHostName=a100-st2-p4de24xlarge-99 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1011682 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=learnai,learnai4p,midas,tier0 
+   BootTime=2023-10-18T18:48:58 SlurmdStartTime=2023-10-18T18:52:33
+   LastBusyTime=2023-10-20T03:45:10
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-100 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.79
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-100 NodeHostName=a100-st2-p4de24xlarge-100 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074560 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:47:55 SlurmdStartTime=2023-10-18T18:51:22
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-101 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.58
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-101 NodeHostName=a100-st2-p4de24xlarge-101 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074438 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:19:40 SlurmdStartTime=2023-10-18T18:23:36
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-102 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.65
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-102 NodeHostName=a100-st2-p4de24xlarge-102 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074062 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:17:50 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:18:39
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-103 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.65
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-103 NodeHostName=a100-st2-p4de24xlarge-103 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074534 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:17:35 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-104 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.84
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-104 NodeHostName=a100-st2-p4de24xlarge-104 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1073702 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:18:42 SlurmdStartTime=2023-10-18T18:22:11
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-105 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.42
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-105 NodeHostName=a100-st2-p4de24xlarge-105 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074413 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:18:18 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-106 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.58
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-106 NodeHostName=a100-st2-p4de24xlarge-106 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1073745 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:17:25 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-107 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.23
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-107 NodeHostName=a100-st2-p4de24xlarge-107 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1074441 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:18:16 SlurmdStartTime=2023-10-18T18:21:58
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-108 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.37
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-108 NodeHostName=a100-st2-p4de24xlarge-108 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089841 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:19:05 SlurmdStartTime=2023-10-18T18:22:35
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-109 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=2.07
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-109 NodeHostName=a100-st2-p4de24xlarge-109 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089918 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:18:02 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-110 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.44
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-110 NodeHostName=a100-st2-p4de24xlarge-110 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1090027 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:18:56 SlurmdStartTime=2023-10-18T18:22:15
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-111 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.55
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-111 NodeHostName=a100-st2-p4de24xlarge-111 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089932 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T18:17:00 SlurmdStartTime=2023-10-18T18:21:50
+   LastBusyTime=2023-10-20T03:18:38
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-112 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.08
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-112 NodeHostName=a100-st2-p4de24xlarge-112 Version=22.05.2
+   OS=Linux 5.15.0-1043-aws #48~20.04.1-Ubuntu SMP Wed Aug 16 18:26:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=612457 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-12T18:10:19 SlurmdStartTime=2023-09-12T18:13:42
+   LastBusyTime=2023-10-17T20:42:37
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:13:41]
+
+NodeName=a100-st2-p4de24xlarge-113 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.62
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-113 NodeHostName=a100-st2-p4de24xlarge-113 Version=22.05.2
+   OS=Linux 5.15.0-1043-aws #48~20.04.1-Ubuntu SMP Wed Aug 16 18:26:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1036509 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-12T18:12:26 SlurmdStartTime=2023-09-12T18:15:46
+   LastBusyTime=2023-10-17T20:42:37
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:13:41]
+
+NodeName=a100-st2-p4de24xlarge-114 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.71
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-114 NodeHostName=a100-st2-p4de24xlarge-114 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=858791 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T13:10:25 SlurmdStartTime=2023-09-08T13:13:43
+   LastBusyTime=2023-10-17T20:42:37
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:13:41]
+
+NodeName=a100-st2-p4de24xlarge-115 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.53
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-115 NodeHostName=a100-st2-p4de24xlarge-115 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=717518 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T14:24:11 SlurmdStartTime=2023-09-08T14:27:19
+   LastBusyTime=2023-10-17T20:42:37
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:13:41]
+
+NodeName=a100-st2-p4de24xlarge-116 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.40
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-116 NodeHostName=a100-st2-p4de24xlarge-116 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=738931 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-07T15:20:31 SlurmdStartTime=2023-09-07T15:24:12
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-117 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.45
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-117 NodeHostName=a100-st2-p4de24xlarge-117 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=830569 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-06T23:28:45 SlurmdStartTime=2023-09-06T23:31:49
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-118 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.48
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-118 NodeHostName=a100-st2-p4de24xlarge-118 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=825481 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-06T23:27:17 SlurmdStartTime=2023-09-06T23:30:27
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-119 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.31
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-119 NodeHostName=a100-st2-p4de24xlarge-119 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=906704 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T13:09:58 SlurmdStartTime=2023-09-08T14:12:23
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-120 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.67
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-120 NodeHostName=a100-st2-p4de24xlarge-120 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=697064 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T14:23:24 SlurmdStartTime=2023-09-08T14:26:59
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-121 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.19
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-121 NodeHostName=a100-st2-p4de24xlarge-121 Version=22.05.2
+   OS=Linux 5.15.0-1043-aws #48~20.04.1-Ubuntu SMP Wed Aug 16 18:26:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1039031 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-12T18:10:47 SlurmdStartTime=2023-09-12T18:14:16
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-122 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.18
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-122 NodeHostName=a100-st2-p4de24xlarge-122 Version=22.05.2
+   OS=Linux 5.15.0-1043-aws #48~20.04.1-Ubuntu SMP Wed Aug 16 18:26:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1037402 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-12T18:10:17 SlurmdStartTime=2023-09-12T18:13:45
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-123 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.20
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-123 NodeHostName=a100-st2-p4de24xlarge-123 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=868323 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T14:23:11 SlurmdStartTime=2023-09-08T14:26:58
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-124 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.37
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-124 NodeHostName=a100-st2-p4de24xlarge-124 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=867512 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-08T12:51:41 SlurmdStartTime=2023-09-08T12:56:12
+   LastBusyTime=2023-10-17T14:29:27
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-125 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.24
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-125 NodeHostName=a100-st2-p4de24xlarge-125 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=718697 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-06T23:27:40 SlurmdStartTime=2023-09-06T23:30:41
+   LastBusyTime=2023-10-17T14:29:27
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-126 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.46
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-126 NodeHostName=a100-st2-p4de24xlarge-126 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=777925 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-06T23:17:38 SlurmdStartTime=2023-09-06T23:20:57
+   LastBusyTime=2023-10-17T14:29:27
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-127 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.35
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-127 NodeHostName=a100-st2-p4de24xlarge-127 Version=22.05.2
+   OS=Linux 5.15.0-1041-aws #46~20.04.1-Ubuntu SMP Wed Jul 19 15:40:00 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=761731 Sockets=48 Boards=1
+   State=ALLOCATED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-06T23:08:07 SlurmdStartTime=2023-09-06T23:11:22
+   LastBusyTime=2023-10-17T14:29:27
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-128 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=12 CPUEfctv=96 CPUTot=96 CPULoad=8.68
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-128 NodeHostName=a100-st2-p4de24xlarge-128 Version=22.05.2
+   OS=Linux 5.15.0-1043-aws #48~20.04.1-Ubuntu SMP Wed Aug 16 18:26:32 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1059351 Sockets=48 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-09-15T04:48:36 SlurmdStartTime=2023-09-15T04:54:50
+   LastBusyTime=2023-10-17T14:27:22
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=12,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=maint [root@2023-10-18T18:07:07]
+
+NodeName=a100-st2-p4de24xlarge-129 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.52
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-129 NodeHostName=a100-st2-p4de24xlarge-129 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1044308 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:48:38 SlurmdStartTime=2023-10-18T17:52:06
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-130 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.94
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-130 NodeHostName=a100-st2-p4de24xlarge-130 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1064289 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:42:07 SlurmdStartTime=2023-10-18T17:46:52
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-131 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.84
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-131 NodeHostName=a100-st2-p4de24xlarge-131 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1064031 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:41:47 SlurmdStartTime=2023-10-18T17:46:52
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-132 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.56
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-132 NodeHostName=a100-st2-p4de24xlarge-132 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1063984 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:42:54 SlurmdStartTime=2023-10-18T17:46:52
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-133 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.73
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-133 NodeHostName=a100-st2-p4de24xlarge-133 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1064322 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:43:25 SlurmdStartTime=2023-10-18T17:46:55
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-134 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=14.32
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-134 NodeHostName=a100-st2-p4de24xlarge-134 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1063956 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:48:27 SlurmdStartTime=2023-10-18T17:52:00
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-135 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=13.73
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-135 NodeHostName=a100-st2-p4de24xlarge-135 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1064466 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:45:54 SlurmdStartTime=2023-10-18T17:49:44
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-136 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=14.27
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-136 NodeHostName=a100-st2-p4de24xlarge-136 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1063693 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:45:13 SlurmdStartTime=2023-10-18T17:48:46
+   LastBusyTime=2023-10-19T20:48:31
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-137 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.42
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-137 NodeHostName=a100-st2-p4de24xlarge-137 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1056219 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:43:55 SlurmdStartTime=2023-10-18T17:47:34
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-138 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.76
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-138 NodeHostName=a100-st2-p4de24xlarge-138 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1056565 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:47:08 SlurmdStartTime=2023-10-18T17:50:42
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-139 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.23
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-139 NodeHostName=a100-st2-p4de24xlarge-139 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1055725 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:43:44 SlurmdStartTime=2023-10-18T17:47:23
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-140 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.27
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-140 NodeHostName=a100-st2-p4de24xlarge-140 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1056154 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:42:20 SlurmdStartTime=2023-10-18T17:46:54
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-141 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=10.91
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-141 NodeHostName=a100-st2-p4de24xlarge-141 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1056550 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:44:13 SlurmdStartTime=2023-10-18T17:47:47
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-142 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.53
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-142 NodeHostName=a100-st2-p4de24xlarge-142 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1055745 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:44:44 SlurmdStartTime=2023-10-18T17:48:12
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-143 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.22
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-143 NodeHostName=a100-st2-p4de24xlarge-143 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1055939 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:43:12 SlurmdStartTime=2023-10-18T17:46:52
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-144 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=96 CPUEfctv=96 CPUTot=96 CPULoad=9.81
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-144 NodeHostName=a100-st2-p4de24xlarge-144 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1055892 Sockets=48 Boards=1
+   State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:45:58 SlurmdStartTime=2023-10-18T17:49:35
+   LastBusyTime=2023-10-18T18:05:18
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=96,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-145 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=5.53
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-145 NodeHostName=a100-st2-p4de24xlarge-145 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089898 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:43:49 SlurmdStartTime=2023-10-18T17:47:57
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-146 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.43
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-146 NodeHostName=a100-st2-p4de24xlarge-146 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089604 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:48:08 SlurmdStartTime=2023-10-18T17:51:21
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-147 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.42
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-147 NodeHostName=a100-st2-p4de24xlarge-147 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089544 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:47:29 SlurmdStartTime=2023-10-18T17:50:51
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-148 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.39
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-148 NodeHostName=a100-st2-p4de24xlarge-148 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089584 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:44:42 SlurmdStartTime=2023-10-18T17:48:04
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=a100-st2-p4de24xlarge-149 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=80 CPUEfctv=96 CPUTot=96 CPULoad=1.39
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=gpu:A100:8(S:0-1)
+   NodeAddr=a100-st2-p4de24xlarge-149 NodeHostName=a100-st2-p4de24xlarge-149 Version=22.05.2
+   OS=Linux 5.15.0-1045-aws #50~20.04.1-Ubuntu SMP Wed Sep 6 17:29:11 UTC 2023 
+   RealMemory=1120179 AllocMem=0 FreeMem=1089852 Sockets=48 Boards=1
+   State=MIXED ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=midas,tier0 
+   BootTime=2023-10-18T17:46:40 SlurmdStartTime=2023-10-18T17:49:57
+   LastBusyTime=2023-10-20T03:39:57
+   CfgTRES=cpu=96,mem=1120179M,billing=721,gres/gpu=8
+   AllocTRES=cpu=80,gres/gpu=8
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+
+NodeName=sysadmin-c5n9xlarge-0 Arch=x86_64 CoresPerSocket=1 
+   CPUAlloc=0 CPUEfctv=36 CPUTot=36 CPULoad=0.04
+   AvailableFeatures=(null)
+   ActiveFeatures=(null)
+   Gres=(null)
+   NodeAddr=sysadmin-c5n9xlarge-0 NodeHostName=sysadmin-c5n9xlarge-0 Version=22.05.2
+   OS=Linux 5.15.0-1033-aws #37~20.04.1-Ubuntu SMP Fri Mar 17 11:39:30 UTC 2023 
+   RealMemory=92902 AllocMem=0 FreeMem=31242 Sockets=18 Boards=1
+   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=admin 
+   BootTime=2023-07-26T17:10:40 SlurmdStartTime=2023-07-26T17:59:09
+   LastBusyTime=2023-10-17T14:27:26
+   CfgTRES=cpu=36,mem=92902M,billing=36
+   AllocTRES=
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+

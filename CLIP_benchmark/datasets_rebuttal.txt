@@ -1,0 +1,7 @@
+wds/imagenet1k
+wds/cars
+wds/vtab/cifar100
+wds/vtab/dtd
+wds/vtab/eurosat
+wds/vtab/flowers
+wds/vtab/svhn
